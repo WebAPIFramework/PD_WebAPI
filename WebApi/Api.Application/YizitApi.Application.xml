@@ -1,0 +1,1589 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Application.AOP.LogDispatchProxy">
+            <summary>
+            AOP注册拦截
+            创建代理类实现 AspectDispatchProxy, IDispatchProxy或IGlobalDispatchProxy
+            </summary>
+        </member>
+        <member name="P:Api.Application.AOP.LogDispatchProxy.Target">
+            <summary>
+            当前服务实例
+            </summary>
+        </member>
+        <member name="P:Api.Application.AOP.LogDispatchProxy.Services">
+            <summary>
+            服务提供器，可以用来解析服务，如：Services.GetService()
+            </summary>
+        </member>
+        <member name="M:Api.Application.AOP.LogDispatchProxy.Invoke(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            拦截方法
+            </summary>
+            <param name="method"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.AOP.LogDispatchProxy.InvokeAsync(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            异步无返回值
+            </summary>
+            <param name="method"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.AOP.LogDispatchProxy.InvokeAsyncT``1(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            异步带返回值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="method"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.AuthenticationService.Login(Api.Application.Dtos.LoginDto)">
+            <summary>
+            登录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.AuthenticationService.CheckPassword(Api.Core.User,Api.Core.Account,Api.Application.Dtos.LoginDto)">
+            <summary>
+             密码校验
+            </summary>
+            <param name="user"></param>
+            <param name="account"></param>
+            <param name="dto"></param>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.AuthenticationService.UserCheckResponse(Api.Core.User,Api.Core.Account,Api.Application.Dtos.LoginDto)">
+            <summary>
+            本地用户判断逻辑
+            </summary>
+            <param name="user"></param>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.BuinessLayer.LoginTypeComparer">
+            <summary>
+            比较器
+            </summary>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.CreateCompany(Api.Application.Dtos.CompanyDto)">
+            <summary>
+            创建企业
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.GetCompanyList">
+            <summary>
+            获取企业列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.UpdateCompany(Api.Application.Dtos.CompanyDto)">
+            <summary>
+            更新企业基本信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.DeleteCompany(System.String)">
+            <summary>
+            删除企业
+            </summary>
+            <param name="companyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.GetTimeZoneList">
+            <summary>
+            获取可选时区列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.ICompanyService.UpdateCompanyPrivileges(Api.Application.Vo.CompanyPrivilege)">
+            <summary>
+            更新企业角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.CompanyService.GetCompanyPrivileges(System.String)">
+            <summary>
+            获取企业权限列表
+            </summary>
+            <param name="companyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationNtfRelease(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页查询-版本更新
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationNtfMaintenance(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页查询-维护通知
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationNtfOther(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页查询-其他通知
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.GetUnReadCount">
+            <summary>
+            获取未读数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationMyAllNotifications(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页获取全部通知
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationMyUnReadNotifications(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页获取未读的通知
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.PaginationNotificationsByType(Api.Application.Enum.EnumNotificationType,Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            按类型分页查询
+            </summary>
+            <param name="type"></param>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.MarkAsRead(System.Collections.Generic.List{System.String})">
+            <summary>
+            标记为已读
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.MarkAsReadAll">
+            <summary>
+            标记全部为已读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.MarkAsDeleted(System.String)">
+            <summary>
+            标记为删除的
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.MarkAllReadAsDeleted">
+            <summary>
+            标记所有已读为已删
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.NotificationService.GetRealeaseChangeLog">
+            <summary>
+            版本更新日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IRoleService.GetRoleList">
+            <summary>
+            获取企业角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IRoleService.GetPrivilege(System.String)">
+            <summary>
+            获取指定角色及权限信息
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IRoleService.CreateRole(Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IRoleService.DeleteRole(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IRoleService.UpdateRole(Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            更新角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.RoleService.GetRoleList">
+            <summary>
+            获取企业角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.RoleService.CreateRole(Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.RoleService.GetPrivilege(System.String)">
+            <summary>
+            获取角色及权限信息
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.RoleService.DeleteRole(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.RoleService.UpdateRole(Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            更新角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.GetUserInfo">
+            <summary>
+            获取当前用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.GetUserPrivilege">
+            <summary>
+            获取当前用户权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.UpdateCurrentPassword(Api.Application.Dtos.User.UserPassword)">
+            <summary>
+            更新自己的密码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.Update(Api.Application.Dtos.User.UserDto)">
+            <summary>
+            更新用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.Insert(Api.Application.Dtos.User.UserDto)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.UpdateUserStatus(System.String,Api.Application.Enum.EnumUserStatus)">
+            <summary>
+            更新 用户状态（启/停用户）
+            </summary>
+            <param name="id"></param>
+            <param name="userStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.Logout">
+            <summary>
+            退出系统（清除reids中的token缓存）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.GetCompanyPrivilege">
+            <summary>
+            获取当前企业的全部权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.ResetPassword(System.String)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.UpdateUsersRoles(Api.Application.Dtos.User.UserRolesDto)">
+            <summary>
+            更新用户角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.PaginationUsers(Core.Infrastructure.Common.QueryParameter)">
+            <summary>
+            分页查询用户
+            </summary>
+            <param name="queryParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.IUserService.GetUserPrivilege(Api.Core.User)">
+            <summary>
+            指定用户获取用户权限
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.GetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.GetUserPrivilege">
+            <summary>
+            获取权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.UpdateCurrentPassword(Api.Application.Dtos.User.UserPassword)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.Logout">
+            <summary>
+            退出系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.Update(Api.Application.Dtos.User.UserDto)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.Insert(Api.Application.Dtos.User.UserDto)">
+            <summary>
+            新建用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.UpdateUserStatus(System.String,Api.Application.Enum.EnumUserStatus)">
+            <summary>
+            更新 用户状态
+            </summary>
+            <param name="id"></param>
+            <param name="userStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.ResetPassword(System.String)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.BuinessLayer.UserService.UpdateUsersRoles(Api.Application.Dtos.User.UserRolesDto)">
+            <summary>
+            用户授权
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.AuthenticationController">
+            <summary>
+            认证模块
+            </summary>
+        </member>
+        <member name="M:Api.Application.AuthenticationController.PostLogin(Api.Application.Dtos.LoginDto)">
+            <summary>
+            登录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.AuthenticationController.GetCompanies(System.String)">
+            <summary>
+            根据用户名获取企业列表
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.AuthenticationController.GetCompanies">
+            <summary>
+            获取当前系统全部企业列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.CompanyController">
+            <summary>
+            企业模块
+            </summary>
+        </member>
+        <member name="M:Api.Application.CompanyController.GetList">
+            <summary>
+            获取企业列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.Post(Api.Application.Dtos.CompanyDto)">
+            <summary>
+            新建企业
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.Put(System.String,Api.Application.Dtos.CompanyDto)">
+            <summary>
+            编辑企业基本信息
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.Delete(System.String)">
+            <summary>
+            删除企业
+            </summary>
+            <param name="companyId">企业id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.GetTimeZones">
+            <summary>
+            获取时区列表
+            </summary>
+            <returns>返回时区列表信息</returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.UpdatePrivileges(Api.Application.Vo.CompanyPrivilege)">
+            <summary>
+            企业授权
+            </summary>
+            <param name="dto">企业授权基本信息以及授权权限列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.CompanyController.GetPrivileges(System.String)">
+            <summary>
+            获取企业的已授权列表
+            </summary>
+            <param name="companyId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.NotificationController">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="M:Api.Application.NotificationController.PostRelease(Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.ReleaseNtf})">
+            <summary>
+            新建通知 - 版本更新
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PostMaintenance(Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.MaintenanceNtf})">
+            <summary>
+            新建通知 - 维护通知
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PostOther(Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.OtherNtf})">
+            <summary>
+            新建通知 - 其他
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PutRelease(System.String,Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.ReleaseNtf})">
+            <summary>
+            编辑通知 -版本更新
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PutMaintenance(System.String,Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.MaintenanceNtf})">
+            <summary>
+            编辑通知 - 维护通知
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PutOther(System.String,Api.Application.Dtos.Notificaiton.NotficationDto{Api.Application.Dtos.Notificaiton.OtherNtf})">
+            <summary>
+            编辑通知 - 其他
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.Delete(System.String)">
+            <summary>
+            删除消息通知
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.Undo(System.String)">
+            <summary>
+            撤回消息通知
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetReleasePage(Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            查看列表（分页查询） --版本更新
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetMaintenancePage(Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            查看列表（分页查询） --维护通知
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetOtherPage(Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            查看列表（分页查询） --其他
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetCount">
+            <summary>
+            获取未读通知数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetAllPage(Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            分页获取全部通知
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetUnReadPage(Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            分页获取未读通知
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetPage(Api.Application.Enum.EnumNotificationType,Core.Infrastructure.Common.BasePagination)">
+            <summary>
+            按类型获取分页通知
+            </summary>
+            <param name="type"> 0 其他；1 发布；2 维护</param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.GetRealeaseChangeLog">
+            <summary>
+            查询更新日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PutRead(System.Collections.Generic.List{System.String})">
+            <summary>
+            设置消息已读（指定消息卡片）
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.NotificationController.PutReadAll">
+            <summary>
+            设置所有消息已读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.Shipment.RemoteDemoService">
+            <summary>
+            模拟调用远程请求
+            
+            </summary>
+        </member>
+        <member name="T:Api.Application.RoleController">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="M:Api.Application.RoleController.GetList">
+            <summary>
+            获取角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.RoleController.GetPrivilege(System.String)">
+            <summary>
+            获取角色及权限信息
+            </summary>
+            <param name="roleId">角色id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.RoleController.Post(Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.RoleController.Delete(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.RoleController.Put(System.String,Api.Application.Vo.RoleWithPrivilege)">
+            <summary>
+            更新角色
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.SseMessageObject">
+            <summary>
+            自定义的SSE消息对象实体
+            </summary>
+        </member>
+        <member name="T:Api.Application.SSEDemoService">
+            <summary>
+            模拟SSE（Server send events） 服务器往客户端推送
+            </summary>
+        </member>
+        <member name="T:Api.Application.UserController">
+            <summary>
+            用户模块
+            </summary>
+        </member>
+        <member name="M:Api.Application.UserController.GetInfo">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.GetPrivilege">
+            <summary>
+            获取用户的权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.GetCompanyPrivileges">
+            <summary>
+            获取当前用户所属的企业的全部权限列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.UpdatePassword(Api.Application.Dtos.User.UserPassword)">
+            <summary>
+            修改当前操作人的密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.Logout">
+            <summary>
+            退出系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.Post(Api.Application.Dtos.User.UserDto)">
+            <summary>
+            新建用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.Put(System.String,Api.Application.Dtos.User.UserDto)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.UpdateStatus(System.String,Api.Application.Enum.EnumUserStatus)">
+            <summary>
+            启用/停用客户
+            </summary>
+            <param name="id">用户id</param>
+            <param name="userStatus">0 停用；1 启用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.UpdateUserPassword(System.String)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.UpdateRoles(Api.Application.Dtos.User.UserRolesDto)">
+            <summary>
+            授权用户角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.GetPage(Api.Application.Dtos.User.UserPaginationDto)">
+            <summary>
+            分页查询用户
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.UserController.PostSync">
+            <summary>
+            LDAP用户同步
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.LoginDto">
+            <summary>
+            登录dto
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.Username">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.CompanyId">
+            <summary>
+            选择的公司
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.AutoLogin">
+            <summary>
+            是否自动登陆（自动登陆则生成7天有效期的token，否则生成1天有效期的token）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.Platform">
+            <summary>
+            登录端(默认web端)
+            0:web端；1：手机端；2：pda端；3：客户端
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.LoginDto.LoginType">
+            <summary>
+            登录类型（-1 因致账户；0 本地用户； 1 LDAP用户；2 微信用户；3 钉钉用户）
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.CompanyDto">
+            <summary>
+            企业dto
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.No">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.TimezoneId">
+            <summary>
+            时区
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.CompanyDto.Manager">
+            <summary>
+            管理员名称
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.NotficationDto`1">
+            <summary>
+            通知
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.NotficationDto`1.PublishRange">
+            <summary>
+            通知范围（默认all）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.NotficationDto`1.PublishType">
+            <summary>
+            通知发布方式(默认立即)
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.NotficationDto`1.TimePublish">
+            <summary>
+            发布时间（默认提交时间）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.NotficationDto`1.Type">
+            <summary>
+            通知类型
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.ReleaseNtf">
+            <summary>
+            版本更新 新增编辑
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseNtf.ReleaseTime">
+            <summary>
+            更新时间（默认提交时间）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseNtf.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseNtf.VersionName">
+            <summary>
+            版本名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseNtf.Details">
+            <summary>
+            发布内容
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.ReleaseDetail">
+            <summary>
+            版本更新详情实体
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseDetail.ReleaseId">
+            <summary>
+            版本更新id（编辑时需要传入）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseDetail.ReleaseType">
+            <summary>
+            版本更新类型 （0： fix; 1: feature；2: improvement; 3: design ; 4:doc）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.ReleaseDetail.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.MaintenanceNtf">
+            <summary>
+            维护通知 新增编辑参数
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.MaintenanceNtf.MaintenanceTime">
+            <summary>
+            维护时间
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.MaintenanceNtf.Content">
+            <summary>
+            维护内容
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.MaintenanceNtf.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.OtherNtf">
+            <summary>
+            其他通知 新增编辑参数
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.OtherNtf.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.Notificaiton.OtherNtf.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.NotificationModel">
+            <summary>
+            与客户端交互的通知模型
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.Notificaiton.NotificationtContent">
+            <summary>
+            暂不定，可以考虑notitionbase 或者notificationcard
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.User.UserDto">
+            <summary>
+            新建/编辑用户
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Id">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Username">
+            <summary>
+            用户名(登录名)
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.JobNo">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Mobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.Available">
+            <summary>
+            停用/启用状态 
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserDto.AccountType">
+            <summary>
+            账户类型，默认本地用户
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.User.UserPaginationDto">
+            <summary>
+            分页查询用户列表参数
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserPaginationDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserPaginationDto.Name">
+            <summary>
+            员工姓名
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.User.UserPassword">
+            <summary>
+            修改密码dto
+            </summary>
+        </member>
+        <member name="T:Api.Application.Dtos.User.UserRolesDto">
+            <summary>
+            批量设置用户角色dto
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserRolesDto.UserIds">
+            <summary>
+            要设置的用户id列表
+            </summary>
+        </member>
+        <member name="P:Api.Application.Dtos.User.UserRolesDto.RoleIds">
+            <summary>
+            赋予授权的角色id列表
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumNotificationType">
+            <summary>
+            通知类型
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationType.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationType.Release">
+            <summary>
+            版本更新
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationType.Maintenance">
+            <summary>
+            维护通知
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumNotificationPublishType">
+            <summary>
+            通知发布方式
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationPublishType.Immediate">
+            <summary>
+            立即发送
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationPublishType.Timed">
+            <summary>
+            定时发送
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumNotificationRange">
+            <summary>
+            通知范围
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationRange.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationRange.Company">
+            <summary>
+            指定公司
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationRange.Role">
+            <summary>
+            指定角色
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumNotificationRange.User">
+            <summary>
+            指定用户
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumReleaseType">
+            <summary>
+            发布更新类型
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumPrivilegeCodeType">
+            <summary>
+            权限类型
+            code所属，0：menus；1：entities
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumPrivilegeCodeType.Menus">
+            <summary>
+            所属菜单
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumPrivilegeCodeType.Entities">
+            <summary>
+            所属功能点
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumUserStatus">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumUserStatus.Disabled">
+            <summary>
+            停用
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumUserStatus.Enabled">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="T:Api.Application.Enum.EnumUserType">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumUserType.Normal">
+            <summary>
+            普通用户
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumUserType.Admin">
+            <summary>
+            企业管理员
+            </summary>
+        </member>
+        <member name="F:Api.Application.Enum.EnumUserType.SuperAdmin">
+            <summary>
+            超级管理员
+            </summary>
+        </member>
+        <member name="T:Api.Application.CustomErrorCodes">
+            <summary>
+            sample error codes
+            </summary>
+        </member>
+        <member name="F:Api.Application.CustomErrorCodes.C1000">
+            <summary>
+            不匹配
+            </summary>
+        </member>
+        <member name="T:Api.Application.Http.IConfig">
+            <summary>
+            远程请求 范例
+            </summary>
+        </member>
+        <member name="M:Api.Application.Http.IConfig.GetCustomerTreeAsync(System.String)">
+            <summary>
+            调用获取客户数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.Http.Isso">
+            <summary>
+            远程请求 范例
+            </summary>
+        </member>
+        <member name="M:Api.Application.Http.Isso.PostLoginAsync(Api.Application.Http.User)">
+            <summary>
+            调用登录接口
+            Post
+            支持
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Application.Http.Isso.PostLoginAsDynamicAsync(Api.Application.Http.User)">
+            <summary>
+            远程调用登录接口
+            返回用dynamic，无需再创建返回实体
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Application.Http.User">
+            <summary>
+            登录用户dto
+            </summary>
+        </member>
+        <member name="M:Api.Application.Hubs.ISysNotificationHub.HandleNotificationChange(Api.Application.Dtos.Notificaiton.NotificationModel)">
+            <summary>
+            更新通知
+            </summary>
+        </member>
+        <member name="T:Api.Application.Hubs.SysNTHub">
+            <summary>
+            系统消息集线器
+            </summary>
+        </member>
+        <member name="T:Api.Application.Mapper.Mapper">
+            <summary>
+            sample mapper
+            </summary>
+        </member>
+        <member name="M:Api.Application.Mapper.Mapper.Register(Mapster.TypeAdapterConfig)">
+            <summary>
+            注册entity和dto的映射关系（用的是Mapster）
+            </summary>
+            <param name="config"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Api.Application.SubscribeHandler.LDAPUserSyncSubscribeHandler" -->
+        <member name="M:Api.Application.SubscribeHandler.LDAPUserSyncSubscribeHandler.SyncUser(System.String,System.Object)">
+            <summary>
+            同步用户
+            </summary>
+            <param name="eventId"></param>
+            <param name="payload"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Api.Application.SubscribeHandler.UserChangeSubscribeHandler" -->
+        <member name="T:Api.Application.Vo.LoginUserInfoResponse">
+            <summary>
+            根据token返回用户信息实体
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserInfoResponse.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserInfoResponse.Username">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserInfoResponse.UserType">
+            <summary>
+            用户类型
+            0 普通用户；1：企业管理员；2：超级管理员
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserInfoResponse.CompanyId">
+            <summary>
+            企业id（多租户标记）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserInfoResponse.AccountType">
+            <summary>
+            账户类型
+            -1 因致； 0 本地；1 LDAP
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.LoginUserPrivilegeResponse">
+            <summary>
+            根据token返回用户的权限列表
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.LoginUserResponse">
+            <summary>
+            登录返回信息
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.Token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.UserType">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.CompanyId">
+            <summary>
+            企业id（多租户标记）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.PrivilegeCodes">
+            <summary>
+            权限Code列表
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.LoginUserResponse.AccountType">
+            <summary>
+            账户类型
+            -1 因致； 0 本地；1 LDAP
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.PrivilegeCode">
+            <summary>
+            权限实体（供后续拓展）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.PrivilegeCode.MenuIds">
+            <summary>
+            模块权限
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.PrivilegeCode.EntityIds">
+            <summary>
+            功能权限
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.Company.ApplicableCompanyInfo">
+            <summary>
+            登录页面获取公司信息的实体
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.Company.LoginType">
+            <summary>
+            支持的登录类型
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.CompanyPrivilege">
+            <summary>
+            企业权限
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.CompanyPrivilege.Id">
+            <summary>
+            企业id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.CompanyPrivilege.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.CompanyPrivilege.MenuIds">
+            <summary>
+            企业模块权限
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.CompanyPrivilege.EntityIds">
+            <summary>
+            企业功能权限
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.Notification.NotificationCard">
+            <summary>
+            客户端通知消息卡片实体
+            
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.Id">
+            <summary>
+            消息id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.Title">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.Time">
+            <summary>
+            消息发送时间
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.Type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.IsRead">
+            <summary>
+            是否已读
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.Creator">
+            <summary>
+            消息创建人/通知人
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationCard.CreaterAvatar">
+            <summary>
+            创建人/通知人 图标地址
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationBaseResponse.Time">
+            <summary>
+            消息通知时间
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationBaseResponse.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.NotificationBaseResponse.Sent">
+            <summary>
+            是否已发送
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.Notification.ReleaseChangeLog">
+            <summary>
+            版本更新记录
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLog.Id">
+            <summary>
+            版本更新id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLog.VersionNo">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLog.VersionName">
+            <summary>
+            版本名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLog.Time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.Notification.ReleaseChangeLogDetail">
+            <summary>
+            版本更新记录详情
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLogDetail.Type">
+            <summary>
+            更新类型 （0： fix; 1: feature；2: improvement; 3: design ; 4:doc）
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.Notification.ReleaseChangeLogDetail.Content">
+            <summary>
+            更新内容
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.RoleWithPrivilege">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleWithPrivilege.Id">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleWithPrivilege.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleWithPrivilege.MenuIds">
+            <summary>
+            模块权限
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleWithPrivilege.EntityIds">
+            <summary>
+            功能权限
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.QueryUserResponse">
+            <summary>
+            查询用户返回实体
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Id">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Username">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.JobNo">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Mobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Roles">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.Available">
+            <summary>
+            0-禁用，1-启用
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.UserType">
+            <summary>
+            用户类别
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.AccountType">
+            <summary>
+            账户类型
+            -1 因致； 0 本地；1 LDAP
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.QueryUserResponse.AccountTypeName">
+            <summary>
+            账户类型名称
+            </summary>
+        </member>
+        <member name="T:Api.Application.Vo.RoleResponse">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleResponse.Id">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:Api.Application.Vo.RoleResponse.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="T:Api.Application.Worker.NotificationWorkerFactory">
+            <summary>
+            定时任务消息通知工厂
+            </summary>
+        </member>
+        <member name="M:Api.Application.Worker.NotificationWorkerFactory.CreateNotifcationWorker(Api.Core.Notification_Base)">
+            <summary>
+            创建或者更新定时消息相关的 定时任务（并在定时任务内更新缓存以及即时通知客户端）
+            </summary>
+            <param name="notification"></param>
+        </member>
+        <member name="M:Api.Application.Worker.NotificationWorkerFactory.RemoveNotifcationWorker(Api.Core.Notification_Base)">
+            <summary>
+            移除定时消息相关的定时任务
+            </summary>
+            <param name="notification"></param>
+        </member>
+        <member name="M:Api.Application.Worker.NotificationWorkerFactory.Notifcation(Api.Core.Notification_Base)">
+            <summary>
+            即时通知客户端以及更新消息所有缓存
+            </summary>
+            <param name="notification"></param>
+        </member>
+    </members>
+</doc>

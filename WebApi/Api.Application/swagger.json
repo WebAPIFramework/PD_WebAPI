@@ -1,0 +1,34 @@
+﻿{
+  "SpecificationDocumentSettings": {
+    "DocumentTitle": "WebAPI | 接口文档",
+    "GroupOpenApiInfos": [
+      {
+        "Group": "Default",
+        "Title": "Default",
+        "Visible": false
+      },
+      {
+        "Group": "Turbo",
+        "Title": "Turbo",
+        "Description": "应用框架API",
+        "Visible": true,
+        "Version": "1.0.0",
+        "Contact": {
+          "Name": "贾东明",
+          "Email": "335683442@qq.com"
+        }
+      },
+      {
+        "Group": "Shipment",
+        "Title": "Shipment",
+        "Description": "发货系统API",
+        "Version": "1.0.0",
+        "Visible": true,
+        "Contact": {
+          "Name": "贾东明",
+          "Email": "335683442@qq.com"
+        }
+      }
+    ]
+  }
+}
