@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>YizitApi.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\**" />
+    <Compile Remove="Common\**" />
+    <Compile Remove="Enum\**" />
+    <EmbeddedResource Remove="Base\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <None Remove="Base\**" />
+    <None Remove="Common\**" />
+    <None Remove="Enum\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="redis.json" />
+    <None Remove="YizitApi.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="redis.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

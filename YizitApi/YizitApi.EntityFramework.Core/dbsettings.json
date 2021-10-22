@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "TurboDB": "Server=192.168.8.26;Database=YizitTurbo;User=sa;Password=PT2Excel;"
+  }
+}

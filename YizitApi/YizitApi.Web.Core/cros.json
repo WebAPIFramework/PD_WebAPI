@@ -1,0 +1,7 @@
+{
+  "CorsAccessorSettings": {
+    "PolicyName": "自定义跨域策略名",
+    "WithOrigins": [],
+    "WithMethods": [ "GET", "PUT", "POST", "DELETE", "FETCH", "OPTIONS" ]
+  }
+}

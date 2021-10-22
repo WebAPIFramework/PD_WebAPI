@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>YizitApi.Web.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jwt.json" />
+    <None Remove="YizitApi.Web.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jwt.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YizitApi.Application\YizitApi.Application.csproj" />
+    <ProjectReference Include="..\YizitApi.Database.Migrations\YizitApi.Database.Migrations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+
+</Project>
